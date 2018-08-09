@@ -1,0 +1,92 @@
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+	             Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.x-user-card a {
+	text-decoration: none;
+}
+
+.x-user-card > .background {
+	height: 150px;
+
+	background-image: url('https://cdn-images-1.medium.com/max/2000/1*19LWzzJJDPqGq67Vyd0EjQ.jpeg');
+	background-size: cover;
+
+	border-radius: 0.25em 0.25em 0 0;
+}
+
+.x-user-card > .avatar-container {
+	position: relative;
+	top: -40px;
+}
+
+.x-user-card > .avatar-container > .avatar {
+	display: block;
+
+	width: 80px;
+	height: 80px;
+
+	margin: 0 auto -40px auto;
+
+	border-radius: 50%;
+	overflow: hidden;
+
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+
+	background: white;
+}
+.x-user-card > .avatar-container > .avatar > img {
+	width: 100%;
+	height: 100%;
+}
+
+.x-user-card > .name {
+	text-align: center;
+
+	color: #111;
+
+	margin: 0.66em 0 0.84em 0;
+	font-size: 1.5em;
+	letter-spacing: -0.06em;
+
+	font-weight: 500;
+}
+
+.x-user-card > .content {
+	display: flex;
+	flex-direction: row;
+
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+.x-user-card > .content > .block {
+	display: block;
+
+	flex-grow: 1;
+
+	padding: 0.5em 0;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: #707070;
+}
+.x-user-card > .content > .block:not(:first-child) {
+	border-left: 1px solid #eee;
+}
+
+.x-user-card > .content > .block > b,
+.x-user-card > .content > .block > span {
+	display: block;
+}
+
+.x-user-card > .content > .block > b {
+	color: #292f33;
+
+	margin-bottom: 0.3em;
+}
+
+.x-user-card > .content > .block > span {
+	font-size: 0.77em;
+}
