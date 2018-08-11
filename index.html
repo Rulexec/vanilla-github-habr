@@ -5,37 +5,58 @@
 	<title>GitHub users</title>
 
 	<link rel='stylesheet' type='text/css' href='index.css'>
+
+	<script src='lib/packages.js'></script>
+	<script src='lib/templates.js'></script>
+	<script src='lib/binding.js'></script>
+	<script src='lib/debounce.js'></script>
+	<script src='lib/ajax.js'></script>
+	<script src='lib/util.js'></script>
+	<script src='lib/dom-util.js'></script>
+
+	<script src='components/user-name-input/user-name-input.js'></script>
+	<script src='components/user-card/user-card.js'></script>
+
+	<script src='components/app/github-api.js'></script>
+	<script src='components/app/app.js'></script>
+
+	<script src='index.js'></script>
 </head>
 <body>
 
+<div id='root'></div>
+
 <div id='templates'>
 	<div data-template-id='username_input'>
-		<input type='text' data-element='userNameInputEl'>
+		<input type='text' data-onedit='onNameEdit' placeholder='GitHub username'>
 	</div>
 
 	<div data-template-id='usercard' class='x-user-card'>
 		<div class='background'></div>
 		<div class='avatar-container'>
-			<a class='avatar' data-element='avatarLinkEl'>
-				<img data-element='avatarImgEl' src='https://avatars3.githubusercontent.com/u/497420?v=4&s=80'>
+			<a class='avatar' data-href='userUrl'>
+				<img data-src='avatarImageUrl'>
 			</a>
 		</div>
-		<div class='name' data-element='userNameEl'>Alexander Ruliov</div>
+		<div class='name' data-text='userName'></div>
 		<div class='content'>
-			<a class='block'>
-				<b>50</b>
+			<a class='block' data-href='reposUrl'>
+				<b data-text='reposCount'></b>
 				<span>Repos</span>
 			</a>
-			<a class='block'>
-				<b>13</b>
+			<a class='block' data-href='gistsUrl'>
+				<b data-text='gistsCount'></b>
 				<span>Gists</span>
 			</a>
-			<a class='block'>
-				<b>20</b>
+			<a class='block' data-href='followersUrl'>
+				<b data-text='followersCount'></b>
 				<span>Followers</span>
 			</a>
 		</div>
 	</div>
+
+	<div data-template-id='error'><b data-text='status'></b>: <span data-text='text'></span></div>
+	<div data-template-id='loading'>Loading...</div>
 </div>
 
 </body>
